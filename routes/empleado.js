@@ -19,7 +19,6 @@ empleado.post("/", async (req, res, next) =>{
     return res.status(500).json({code: 500, message: "Campos Incompletos"});
 });
 
-
 empleado.delete("/:id([0-9]{1,3})", async(req, res, next) =>{
     const query = `DELETE FROM empleado WHERE Id_empleado = ${req.params.id}`;
 
@@ -30,7 +29,6 @@ empleado.delete("/:id([0-9]{1,3})", async(req, res, next) =>{
     }
     return res.status(404).json({code: 404, message: "Empleado no encontrado"});
 });
-
 
 empleado.put("/:id([0-9]{1,3})", async(req, res, next) =>{
     const {Nombre, Apellido, Telefono, Email, Direccion} = req.body;
@@ -49,7 +47,6 @@ empleado.put("/:id([0-9]{1,3})", async(req, res, next) =>{
     return res.status(500).json({code: 500, message: "Campos Incompletos"});
 
 });
-
 
 empleado.get("/", async(req, res, next) => {
     const emp = await db.query("SELECT * FROM empleado");
