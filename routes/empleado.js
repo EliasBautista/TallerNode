@@ -6,7 +6,7 @@ empleado.post("/", async (req, res, next) =>{
     const {Nombre, Apellido, Telefono, Email, Direccion} = req.body;
 
     if (Nombre && Apellido && Telefono && Email && Direccion) {
-        let query = "INSERT INTO empleado(Nombre, Apellido, Telefono, Email, Direccion)";
+        let query = "INSERT INTO empleado (Nombre, Apellido, Telefono, Email, Direccion)";
         query += `VALUES ('${Nombre}','${Apellido}','${Telefono}','${Email}','${Direccion}')`;
         const rows = await db.query(query);
         //console.log(rows);
@@ -48,12 +48,6 @@ empleado.put("/:id([0-9]{1,3})", async(req, res, next) =>{
 
 });
 
-empleado.get("/", async(req, res, next) => {
-    const emp = await db.query("SELECT * FROM empleado");
-    //console.log(emp);
-    return res.status(200).json(emp);
-});
-
 empleado.get('/:id([0-9]{1,3})', async (req, res, next) => {
     const id = req.params.id;
     const emp = await db.query("SELECT * FROM empleado WHERE Id_empleado = " + id);
@@ -65,6 +59,12 @@ empleado.get('/:id([0-9]{1,3})', async (req, res, next) => {
     // if (id >= 0 && id <= 150) {
     //     return res.status(200).send(pk[req.params.id - 1]);
     // }
+});
+
+empleado.get("/", async(req, res, next) => {
+    const emp = await db.query("SELECT * FROM empleado");
+    //console.log(emp);
+    return res.status(200).json(emp);
 });
 
 empleado.get('/:name([A-Za-z]+)', async (req, res, next) => {
