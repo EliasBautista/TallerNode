@@ -2,8 +2,8 @@
 Este es el proyecto final para el taller de NodeJS.
 
 ## Integrantes:
-*Elias Bautista
-*Hugo Gomez
+* Elias Bautista
+* Hugo Gomez
 	
 ## Technologies
 El proyecto esta creado con:
