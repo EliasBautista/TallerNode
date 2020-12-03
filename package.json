@@ -1,0 +1,19 @@
+{
+  "name": "pf_node",
+  "version": "1.0.0",
+  "description": "An express project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "nodejs"
+  ],
+  "author": "Elias Bautista",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
