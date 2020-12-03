@@ -77,5 +77,4 @@ empleado.get('/:name([A-Za-z]+)', async (req, res, next) => {
     }
 })
 
-
 module.exports = empleado;

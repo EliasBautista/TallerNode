@@ -16,7 +16,7 @@ function init(){
 }
 
 function loadEmployee() {
-    axios.get(url + "/recursos", headers)
+    axios.get(url + "/empleado", headers)
     .then(function(res) {
         console.log(res);
         displayEmployee(res.data.message);
@@ -25,9 +25,9 @@ function loadEmployee() {
     })
 }
 
-function displayEmployee(recursos) {
+function displayEmployee(empleado) {
     var body = document.querySelector("body");
-    for(var i = 0; i <recursos.length; i++) {
-        body.innerHTML += `<h3>${recursos[i].Nombre} ${recursos[i].Apellido}</h3>`;
+    for(var i = 0; i <empleado.length; i++) {
+        body.innerHTML += `<h3>${empleado[i].Nombre} ${empleado[i].Apellido}</h3>`;
     }
 }
